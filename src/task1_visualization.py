@@ -1,6 +1,3 @@
-from collections import Counter
-from typing import Union, Any
-
 import matplotlib.pyplot as plt
 import numpy as np
 import collections
@@ -13,9 +10,7 @@ def plot_distribution(data):
     Parameters:
     data (array-like): An array of categorical data items.
     """
-    counts: Union[Counter[Any], Counter[str]] = collections.Counter(data)
-
-    # Create the bar plot
+    counts = collections.Counter(data)
     plt.bar(counts.keys(), counts.values())
     plt.xlabel('Category')
     plt.ylabel('Frequency')
